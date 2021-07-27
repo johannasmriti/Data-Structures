@@ -29,6 +29,7 @@ int main(){
     for(auto i:m){
         if(i.first!=c){
             missing=i.first-1;
+            c++;
             //cout<<i.first<<endl;
         }
         if(i.second>1){
