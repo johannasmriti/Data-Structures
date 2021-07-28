@@ -11,6 +11,8 @@ Explanation: The missing number from 1 to 8 is 5
 Input: arr[] = {1, 2, 3, 5}
 Output: 4
 Explanation: The missing number from 1 to 5 is 4*/
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -19,19 +21,20 @@ int main() {
   int n;
   cin>>n;
   int a[n];
+  int sum=0;
   for(int i=0;i<n;i++){
     cin>>a[i];
+    sum+=a[i];
   } 
   sort(a,a+n);
-  for(int i=1;i<n;i++){
+  /*for(int i=1;i<n;i++){
     if(a[i]-a[i-1]>1){
       cout<<a[i]-1<<endl;
       break;
     }
-  }
-  /*int total = (n + 1) * (n + 2) / 2;
-    for (int i = 0; i < n; i++)
-        total -= a[i];
-    cout<<total;*/
+  }*/
+  int total = (n+1) * (n+2) / 2;
+  total=total-sum;
+  cout<<total;
   return 0;
 }
